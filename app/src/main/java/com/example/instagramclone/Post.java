@@ -1,9 +1,13 @@
 package com.example.instagramclone;
 
+import android.util.Log;
+
 import com.parse.ParseClassName;
 import com.parse.ParseFile;
 import com.parse.ParseObject;
 import com.parse.ParseUser;
+
+import java.util.Date;
 
 @ParseClassName("Post")
 public class Post extends ParseObject {
@@ -37,5 +41,7 @@ public class Post extends ParseObject {
         put(KEY_USER, user);
     }
 
-
+    public Date getCreatedAt() {
+        Log.i("getCreatedAt", getUser().getUsername());
+        return getParseObject(getUser().getUsername()).getDate(KEY_CREATED_AT);}
 }
