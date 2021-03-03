@@ -88,7 +88,7 @@ public class PostsFragment extends Fragment {
         query.include(Post.KEY_USER);
         query.addDescendingOrder(Post.KEY_CREATED_AT);
         Log.i("testing",allPosts.get(0).getUser().getUsername());
-        query.whereGreaterThan(Post.KEY_CREATED_AT,allPosts.get(0).getCreatedAt());
+        query.whereGreaterThan(Post.KEY_CREATED_AT,allPosts.get(0).getCreatedAtDate());
         query.findInBackground(new FindCallback<Post>() {
             @Override
             public void done(List<Post> posts, ParseException e) {

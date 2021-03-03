@@ -41,7 +41,8 @@ public class Post extends ParseObject {
         put(KEY_USER, user);
     }
 
-    public Date getCreatedAt() {
-        Log.i("getCreatedAt", getUser().getUsername());
-        return getParseObject(getUser().getUsername()).getDate(KEY_CREATED_AT);}
+    public Date getCreatedAtDate() {
+        Log.i("getCreatedAt", getCreatedAt().toString());
+
+        return getCreatedAt();}
 }
