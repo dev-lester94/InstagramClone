@@ -37,7 +37,9 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.ViewHolder> 
     public void addAll(List<Post> list) {
         for(Post post: list){
             posts.add(0, post);
+            posts.remove(posts.size()-1);
         }
+        //posts.addAll(list);
         notifyDataSetChanged();
     }
 
